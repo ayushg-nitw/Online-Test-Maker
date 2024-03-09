@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/FrontPage.css">
+</head>
+<body>
+    <h1 id="header">Test Formatter</h1>
+    
+ <div class="buttons">
+        <form action="/testCreator/login" method="GET">
+        <button class="btn btn-primary">Login</button>
+        </form>
+      <form action="/testCreator/signup" method="GET">
+        <button class="btn btn-success">Signup</button>
+     </form>
+ </div>
+
+   <form action="/testCreator/SocialPage" method="GET">
+       <button class="CheckQues btn btn-secondary">Check All Uploaded Papers</button>
+   </form>
+
+    <div class="container">
+
+        <div class="card">
+            <h1>Create Question Paper</h1>
+             <form  id="createForm" method="GET" action="/testCreator/CreateTest">
+                <button class="createbtn btn btn-primary">Create Question Paper</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h1>Upload Question Paper</h1>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="uploadFile" accept=".pdf, .jpg, .jpeg, .png">
+                <button type="submit" class=" uploadbtn btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div id="questionPaperForm" class="card" style="display: none;">
+            <h2>Create Question Paper</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

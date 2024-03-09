@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test System</title>
+    <link rel="stylesheet" href="/css/CreateTest.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Question Paper</h1>
+        <form id="testForm" method="POST" action="/submitQuestion">
+            
+            <label for="questionNumber">Question Number:</label>
+            <input type="number" id="questionNumber" name="questionNumber"  min="1" max="50"><br><br>
+
+            <label for="subject">Select Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select subject</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Mathematics">Mathematics</option>
+            </select><br>
+
+            <label for="description">Question:</label>
+           <textarea id="question" name="description" required ></textarea><br>
+
+            <label for="image">Upload Image For this Question (Optional):</label>
+            <input type="file" id="image" name="image"><br>
+
+            <label>Correct Answer:</label>
+            <label for="answerA"><input type="radio" id="answerA" name="correctAns" value="A" required> A</label>
+            <label for="answerB"><input type="radio" id="answerB" name="correctAns" value="B" required> B</label>
+            <label for="answerC"><input type="radio" id="answerC" name="correctAns" value="C" required> C</label>
+            <label for="answerD"><input type="radio" id="answerD" name="correctAns" value="D" required> D</label><br>
+
+            <button type="submit" id="oneQues">Add Question</button>
+        </form>
+    </div>
+    <form method="GET"  action="/testCreator/Attempt">
+    <button type="submit" id="CreateAll">Submit and Create</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

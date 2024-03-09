@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Attempt</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/Attempt.css">
+</head>
+<body>
+    <!-- Question container -->
+    <div class="question-container">
+        <% questions.forEach((question, index) => { %>
+            <div class="question <% if (index !== 0) { %>hidden<% } %>">
+                <h2 id="subject"><%= question.subject %></h2>
+                <h3 id="QuestionNum">Q<%= question.questionNumber %></h3>
+                <p id="description"><%= question.description %></p>
+
+                <% if (question.image) { %>
+                    <img src="<%= question.image %>" alt="Question Image">
+                <% } %><br>
+
+                <label for="correctAns">Options:</label>
+                <label for="answerA"><input type="radio" id="answerA" name="correctAns" value="A" required> A</label>
+                <label for="answerB"><input type="radio" id="answerB" name="correctAns" value="B" required> B</label>
+                <label for="answerC"><input type="radio" id="answerC" name="correctAns" value="C" required> C</label>
+                <label for="answerD"><input type="radio" id="answerD" name="correctAns" value="D" required> D</label><br>
+            </div>
+        <% }); %>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="navigation-buttons">
+        <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+        <button id="nextBtn" onclick="nextQuestion()">Next</button>
+        <button id="submitBtn" onclick="submitAnswers()">Submit</button>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        let currentQuestionIndex = 0;
+
+        function showQuestion(index) {
+            questions.forEach(question => {
+                question.classList.add('hidden');
+            });
+            questions[index].classList.remove('hidden');
+        }
+        
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function submitAnswers() {
+            // Here you can implement logic to submit answers
+            // For example, collect answers from radio buttons and send them to the server
+        }
+    </script>
+</body>
+</html>

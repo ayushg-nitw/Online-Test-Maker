@@ -1,0 +1,81 @@
+body {
+    background-image: url(https://img.freepik.com/free-photo/flat-lay-desk-concept-with-copy-space_23-2148236810.jpg);
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+#header {
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+}
+
+.container{
+    height: 300px;
+    width: 800px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:150px;
+}
+
+.card{
+    height: 300px;
+    width: 350px;
+    background-color: rgb(174, 174, 248);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.card h1{
+    text-align:center;
+    border-bottom: 2px solid #333; 
+    padding-bottom: 10px; 
+}
+.card input{
+    padding: 15px;
+}
+.uploadForm{
+    display: flex;
+
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.createbtn {
+    margin-top: 70px;
+    margin-left:22%;
+}
+.uploadbtn{
+    margin-top: 10px;
+    margin-left: 40%;
+}
+.CheckQues{
+ margin-left: 42%;
+ position: absolute;
+ bottom: 100px;
+ color:black;
+ font-weight: 700;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    position:absolute;
+    left: 10px;
+    top:10px;
+}
+
+.buttons button {
+    margin-left: 10px;
+}
+
+
+
